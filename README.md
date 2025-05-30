@@ -127,22 +127,89 @@ When a tag with child tags is selected, an additional multiselect is rendered be
 
 The fetched data must match all of the selected tags, meaning the filter uses an "AND" relationship (only entries containing every selected tag will be returned). Removing a tag from the middle of the hierarchy will also remove all of its child tags. So, deleting "Colors" will also delete "Tools" and "Shades". 
 
+| Adding Data |
+|-------------------|
+| ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=data-new-1) |
+| ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=data-new-2) |
+| ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=data-new-3) |
+
+The middle of the page contains the date of the last save and a button for a new entry. The button opens the same modal that is used for editing an entry and contains 3 rows, one for name, one for tags (which will render additional multiselects if child tags exist) and one for additial values (with the ability of adding, moving up or down and deleting).
+
+| Adding Data |
+|-------------------|
+| ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=data-new-4) |
+
+When the submit button is pressed, the modal closes, the data is sent to the JSON server for encryption and storage, and the data list is then refetched (with matching toast notifications). 
+
+| Editing Data |
+|-------------------|
+| ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=data-edit-1) |
+| ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=data-edit-2) |
+| ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=data-edit-3) |
+| ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=data-edit-4) |
+
+Each entry can be edited or deleted. Clicking the delete button opens a confirmation dialog, while clicking the edit button displays a modal window with the reused form from adding an entry.
+
+| Copying Data |
+|-------------------|
+| ![Copying_Data Screenshot](https://drive.google.com/uc?export=view&id=data-copy) |
+
+Copying values (such as a link) is made easier with a button that appears when you hover over the text.
+
+| Rendering Data List |
+|-------------------|
+| ![Rendering_Data_List Screenshot](https://drive.google.com/uc?export=view&id=data-list) |
+
+The list is rendered using the `useInfiniteQuery` hook in combination with the `react-intersection-observer` library, which is used to implement an infinite scroll that loads more data as the bottom of the page is reached.
+
+| Encrypted Data |
+|-------------------|
+| ![Encrypted_Tag Screenshot](https://drive.google.com/uc?export=view&id=data-encr) |
+
+An example of encrypted data.
+
+<br><br>
+
+### Decrypt & Encrypt Page (`/decrypt-encrypt`)
+
+<br>
+
+| Decrypt & Encrypt Data and Tags |
+|-------------------|
+| ![Decrypt_&_Encrypt_Data_and_Tags Screenshot](https://drive.google.com/uc?export=view&id=decrypt-encrypt-page) |
+
+This page is for decrypting using the current key both data and tags and then encrypting with the new key. It will also cause for all data to be refetched.
+
+### UI Responsiveness
+
+The application is also fit for mobile devices even though it wasn't part of the scope.
+
+| Auth Page |
+|-------------------|
+| ![Auth_Page Screenshot](https://drive.google.com/uc?export=view&id=small-auth) |
 
 
+| Tags Page |
+|-------------------|
+| ![Tags_Page Screenshot](https://drive.google.com/uc?export=view&id=small-tags) |
 
+| Encrypt Decrypt Page |
+|-------------------|
+| ![Encrypt_Decrypt_Page Screenshot](https://drive.google.com/uc?export=view&id=small-decrypt-encrypt) |
 
+| Data Page Top | Data Page List |
+|-------------------|-------------------|
+| ![Data Page Top Screenshot](https://drive.google.com/uc?export=view&id=small-data-1) | ![Data Page List Screenshot](https://drive.google.com/uc?export=view&id=small-data-4) |
 
+On small screens (mobile), in order to adapt the copy functionality, the paragraph needs to be tapped to show its coresponding copy button.
 
+| Modal Tags Scroll | Modal Other Scroll |
+|-------------------|-------------------|
+| ![Modal Tags Scroll Screenshot](https://drive.google.com/uc?export=view&id=small-data-2) | ![Modal Other Scroll Screenshot](https://drive.google.com/uc?export=view&id=small-data-3) |
 
-
-
-
-
-
-
-
-
-
+| Confirm Action |
+|-------------------|
+| ![Confirm Action Screenshot](https://drive.google.com/uc?export=view&id=small-data-5) |
 
 
 
