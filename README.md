@@ -26,7 +26,15 @@ Using AES encryption with per-entry random salt and IV, the app ensures that all
 |-------------------|
 | ![Temp Screenshot](https://drive.google.com/uc?export=view&id=AAA) |
 
+## 💬 Comments & Screenshots
+
+This section is for showcasing the features of the app. The encrypted data doesn't contain any sensitive information, however I have populated with links to websites that I find useful.
+
+<br><br>
+
 ### Auth Page (`/auth`)
+
+<br>
 
 | Auth Page |
 |-------------------|
@@ -35,7 +43,11 @@ Using AES encryption with per-entry random salt and IV, the app ensures that all
 This is the application's starting page, where password is entered into the key input field. I chose to use sessionStorage to store the password so that it persists across manual tab reloads, but is automatically cleared when the tab or browser window is closed.
 Since multiple components in the app need access to the password, I use the useContext hook to share and retrieve it efficiently across the application.
 
+<br><br>
+
 ### Tags Page (`/tags`)
+
+<br>
 
 | Tags Page |
 |-------------------|
@@ -45,32 +57,32 @@ The app supports encrypted tags, which means that the stored data is organized m
 
 | Add Subtag | Move Tag |
 |-------------------|-------------------|
-| ![Temp Screenshot](https://drive.google.com/uc?export=view&id=tags-options-add) | ![Temp Screenshot](https://drive.google.com/uc?export=view&id=tags-options-move) | 
+| ![Add_Subtag Screenshot](https://drive.google.com/uc?export=view&id=tags-options-add) | ![Move_Tag Screenshot](https://drive.google.com/uc?export=view&id=tags-options-move) | 
 
 Tags also come with options which are adding a new subtag, moving the tag up or down in the list, and deleting it.
 
 
-| Delete tag |
+| Delete Tag |
 |-------------------|
-| ![Temp Screenshot](https://drive.google.com/uc?export=view&id=tags-options-delete) |
+| ![Delete_Tag Screenshot](https://drive.google.com/uc?export=view&id=tags-options-delete) |
 
 When deleting a tag, a confirmation window will be shown to prevent accidental deletion.
 
 | Bottom Section |
 |-------------------|
-| ![Temp Screenshot](https://drive.google.com/uc?export=view&id=tags-page-bottom) |
+| ![Bottom_Section Screenshot](https://drive.google.com/uc?export=view&id=tags-page-bottom) |
 
 The bottom of the page contains the date of the last save and the save button.
 
-| Save changes |
+| Save Changes |
 |-------------------|
-| ![Temp Screenshot](https://drive.google.com/uc?export=view&id=tags-page-bottom-2) |
+| ![Save_Changes Screenshot](https://drive.google.com/uc?export=view&id=tags-page-bottom-2) |
 
 Upon pressing the save button, it will be disabled and a spinner will be shown.
 
 | Toaster |
 |-------------------|
-| ![Temp Screenshot](https://drive.google.com/uc?export=view&id=tags-options-delete) |
+| ![Toaster Screenshot](https://drive.google.com/uc?export=view&id=tags-options-delete) |
 
 Once the save is successful, a confirmation toaster will be shown and the tags, stored data and last save date will be refetched.
 
@@ -81,8 +93,63 @@ When edit mode is disabled, you can hover over tags for the hierarchical structu
 
 | Encrypted Tag |
 |-------------------|
-| ![Temp Screenshot](https://drive.google.com/uc?export=view&id=tags-encr) |
+| ![Encrypted_Tag Screenshot](https://drive.google.com/uc?export=view&id=tags-encr) |
 
 An example of encrypted tag and its subtags.
+
+| Incorrect Key |
+|-------------------|
+| ![Incorrect_Key Screenshot](https://drive.google.com/uc?export=view&id=tags-wrong-key) |
+
+When the provided password (key) is incorrect, the backend still returns the data, but it's not decrypted.
+
+<br><br>
+
+### Data Page (`/data`)
+
+<br>
+
+| Data Page |
+|-------------------|
+| ![Data Screenshot](https://drive.google.com/uc?export=view&id=data-page) |
+
+This is the page for viewing your encrypted data. At the top, there’s a filtering section with a text input and a multiselect for tags. The search functionality is designed so that results update after pressing the blue search button (typing alone does not trigger a live search). However the live search does get triggered if the multiselect is changed or if the delete button gets pressed.
+
+| Multiselect |
+|-------------------|
+| ![Multiselect Screenshot](https://drive.google.com/uc?export=view&id=data-page-2) |
+
+When a tag with child tags is selected, an additional multiselect is rendered below it, allowing you to choose from its child tags.
+
+| Multiselect |
+|-------------------|
+| ![Multiselect Screenshot](https://drive.google.com/uc?export=view&id=data-page-3) |
+
+The fetched data must match all of the selected tags, meaning the filter uses an "AND" relationship (only entries containing every selected tag will be returned). Removing a tag from the middle of the hierarchy will also remove all of its child tags. So, deleting "Colors" will also delete "Tools" and "Shades". 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
