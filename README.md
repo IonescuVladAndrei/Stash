@@ -150,8 +150,8 @@ When the submit button is pressed, the modal closes, the data is sent to the JSO
 |-------------------|
 | ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=1HZI4NMcJInNCxt9b7bNWkYPkMaRAoGU-) |
 | ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=1HdiE_6cj5onDFW-d4zVAL6XDZzer0MdP) |
-| ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=1HfZ-w5rIfujnWGsYK87buCZdSMZTwic9) |
 | ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=1HkEzEkSHqnmMhguay1hDOcz34-gIT-Qo) |
+| ![Adding_Data Screenshot](https://drive.google.com/uc?export=view&id=1HfZ-w5rIfujnWGsYK87buCZdSMZTwic9) |
 
 Each entry can be edited or deleted. Clicking the delete button opens a confirmation dialog, while clicking the edit button displays a modal window with the reused form from adding an entry.
 
